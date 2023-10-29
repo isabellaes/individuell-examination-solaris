@@ -14,11 +14,12 @@ body {
 }
 
 #planet-info {
+  background: linear-gradient(90deg, #0c164d 0%, #190b22 100%);
   min-height: 100vh;
   max-width: 100vw;
   padding: 0;
   margin: 0;
-  display: none;
+  display: flex;
   flex-direction: row;
 }
 

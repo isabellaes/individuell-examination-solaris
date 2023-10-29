@@ -42,8 +42,6 @@ const planets = getDivsForPlanets();
 
 planets.forEach((div) => {
   div.addEventListener("click", () => {
-    startDiv.style.display = "none";
-    planetinfoDiv.style.display = "flex";
     let id = div.id;
     const planet = fetchPlanetInfo(id);
     planet.then((planet) => {
@@ -52,8 +50,8 @@ planets.forEach((div) => {
   });
 });
 
-const imgplanetinfodiv = document.getElementById("img-planet-info");
+/* const imgplanetinfodiv = document.getElementById("img-planet-info");
 imgplanetinfodiv.addEventListener("click", () => {
   startDiv.style.display = "flex";
   planetinfoDiv.style.display = "none";
-});
+}); */

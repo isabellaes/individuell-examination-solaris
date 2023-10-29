@@ -14,9 +14,11 @@
   </head>
   <body>
     <section id="planet-overview">
-      <div id="img-solen">
-        <img id="0" src="Subtract.png" alt="sun" />
-      </div>
+      <a href="#overlay">
+        <div id="img-solen">
+          <img id="0" src="Subtract.png" alt="sun" />
+        </div>
+      </a>
       <div id="planets">
         <header>
           <h1>SOLSYSTEMET</h1>
@@ -24,52 +26,71 @@
         </header>
 
         <section id="solaris-planet">
-          <div id="1" class="planet1"></div>
-          <div id="2" class="planet2"></div>
-          <div id="3" class="planet3"></div>
-          <div id="4" class="planet4"></div>
-          <div id="5" class="planet5"></div>
-          <div id="6" class="parent">
-            <img src="Ellipse 7.png" class="img-2" alt="" />
-            <img src="Ellipse 10.png" class="img-1" alt="ellipse" />
-          </div>
-          <div id="7" class="planet7"></div>
-          <div id="8" class="planet8"></div>
+          <a href="#overlay">
+            <div id="1" class="planet1"></div>
+          </a>
+          <a href="#overlay">
+            <div id="2" class="planet2"></div>
+          </a>
+          <a href="#overlay">
+            <div id="3" class="planet3"></div>
+          </a>
+          <a href="#overlay">
+            <div id="4" class="planet4"></div>
+          </a>
+          <a href="#overlay">
+            <div id="5" class="planet5"></div>
+          </a>
+          <a href="#overlay">
+            <div id="6" class="parent">
+              <img src="Ellipse 7.png" class="img-2" alt="" />
+              <img src="Ellipse 10.png" class="img-1" alt="ellipse" />
+            </div>
+          </a>
+          <a href="#overlay">
+            <div id="7" class="planet7"></div>
+          </a>
+          <a href="#overlay">
+            <div id="8" class="planet8"></div>
+          </a>
         </section>
       </div>
     </section>
-
-    <section id="planet-info">
-      <div id="img-planet-info" class="parent">
-        <img class="image1" src="sun (1).png" alt="sun" />
-        <img class="image2" src="sun (2).png" alt="sun" />
-        <img class="image2" src="Subtract (1).png" alt="sun" />
-      </div>
-      <div class="planetInfo">
-        <div class="box-100 bottomline">
-          <h1 id="name"></h1>
-          <h2 id="latinName"></h2>
-          <p id="desc"></p>
-        </div>
-        <div class="box-100 row-2">
-          <div class="box-50">
-            <h3>Omkrets</h3>
-            <p id="circumference"></p>
-            <h3>MAX TEMPERATUR</h3>
-            <p id="temp-day"></p>
+    <section id="overlay">
+      <section id="planet-info">
+        <a id="close" href="#">
+          <div id="img-planet-info" class="parent">
+            <img class="image1" src="sun (1).png" alt="sun" />
+            <img class="image2" src="sun (2).png" alt="sun" />
+            <img class="image2" src="Subtract (1).png" alt="sun" />
           </div>
-          <div class="box-50">
-            <h3>KM FRÅN SOLEN</h3>
-            <p id="distance"></p>
-            <h3>MIN TEMPERATUR</h3>
-            <p id="temp-night"></p>
+        </a>
+        <div class="planetInfo">
+          <div class="box-100 bottomline">
+            <h1 id="name"></h1>
+            <h2 id="latinName"></h2>
+            <p id="desc"></p>
+          </div>
+          <div class="box-100 row-2">
+            <div class="box-50">
+              <h3>Omkrets</h3>
+              <p id="circumference"></p>
+              <h3>MAX TEMPERATUR</h3>
+              <p id="temp-day"></p>
+            </div>
+            <div class="box-50">
+              <h3>KM FRÅN SOLEN</h3>
+              <p id="distance"></p>
+              <h3>MIN TEMPERATUR</h3>
+              <p id="temp-night"></p>
+            </div>
+          </div>
+          <div class="moons-div">
+            <h3>MÅNAR</h3>
+            <p id="moons"></p>
           </div>
         </div>
-        <div class="moons-div">
-          <h3>MÅNAR</h3>
-          <p id="moons"></p>
-        </div>
-      </div>
+      </section>
     </section>
     <script src="script.js"></script>
   </body>
