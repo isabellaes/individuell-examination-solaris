@@ -15,9 +15,7 @@
   <body>
     <section id="planet-overview">
       <a href="#overlay">
-        <div id="img-solen">
-          <img id="0" src="Subtract.png" alt="sun" />
-        </div>
+        <div id="0" class="sun"></div>
       </a>
       <div id="planets">
         <header>
@@ -42,10 +40,7 @@
             <div id="5" class="planet5"></div>
           </a>
           <a href="#overlay">
-            <div id="6" class="parent">
-              <img src="Ellipse 7.png" class="img-2" alt="" />
-              <img src="Ellipse 10.png" class="img-1" alt="ellipse" />
-            </div>
+            <div id="6" class="planet6"><div class="satelitt"></div></div>
           </a>
           <a href="#overlay">
             <div id="7" class="planet7"></div>
@@ -59,19 +54,19 @@
     <section id="overlay">
       <section id="planet-info">
         <a id="close" href="#">
-          <div id="img-planet-info" class="parent">
-            <img class="image1" src="sun (1).png" alt="sun" />
-            <img class="image2" src="sun (2).png" alt="sun" />
-            <img class="image2" src="Subtract (1).png" alt="sun" />
+          <div class="parent">
+            <div class="image1"></div>
+            <div class="image2"></div>
+            <div class="image3"></div>
           </div>
         </a>
-        <div class="planetInfo">
-          <div class="box-100 bottomline">
+        <div class="planetInfo-content">
+          <div class="box-100 border-bottom">
             <h1 id="name"></h1>
             <h2 id="latinName"></h2>
             <p id="desc"></p>
           </div>
-          <div class="box-100 row-2">
+          <div class="box-100 flex-row border-bottom">
             <div class="box-50">
               <h3>Omkrets</h3>
               <p id="circumference"></p>
@@ -85,7 +80,7 @@
               <p id="temp-night"></p>
             </div>
           </div>
-          <div class="moons-div">
+          <div class="box-100">
             <h3>MÅNAR</h3>
             <p id="moons"></p>
           </div>

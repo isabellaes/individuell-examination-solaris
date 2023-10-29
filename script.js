@@ -24,8 +24,7 @@ function createTags(planet) {
   distance.innerHTML = planet.distance;
   if (planet.moons.length > 0) {
     const moons = document.getElementById("moons");
-    console.log(planet.moons);
-    moons.innerHTML = planet.moons.toString();
+    moons.innerHTML = planet.moons.join(", ");
   }
 }
 
@@ -49,9 +48,3 @@ planets.forEach((div) => {
     });
   });
 });
-
-/* const imgplanetinfodiv = document.getElementById("img-planet-info");
-imgplanetinfodiv.addEventListener("click", () => {
-  startDiv.style.display = "flex";
-  planetinfoDiv.style.display = "none";
-}); */
