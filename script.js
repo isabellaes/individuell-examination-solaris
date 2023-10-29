@@ -24,10 +24,8 @@ function createTags(planet) {
   distance.innerHTML = planet.distance;
   if (planet.moons.length > 0) {
     const moons = document.getElementById("moons");
-    moons.innerHTML = planet.moons;
-  } else {
-    const moonDiv = document.getElementById("moons-div");
-    moonDiv.style.display = "none";
+    console.log(planet.moons);
+    moons.innerHTML = planet.moons.toString();
   }
 }
 
