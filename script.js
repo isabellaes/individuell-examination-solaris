@@ -48,3 +48,19 @@ planets.forEach((div) => {
     });
   });
 });
+
+function addStarItemtoGrid() {
+  const grid = document.getElementById("stars-grid");
+  for (let index = 0; index < 32; index++) {
+    if (index % 2 === 0 && index > 10) {
+      const element = document.createElement("div");
+      element.classList.add("star-item-small");
+      grid.appendChild(element);
+    }
+    const element = document.createElement("div");
+    element.classList.add("star-item");
+    grid.appendChild(element);
+  }
+}
+
+addStarItemtoGrid();

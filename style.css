@@ -36,7 +36,6 @@ body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  background-image: url(stars.png);
   padding: 0em 15em 5em 20em;
   margin: 0;
   display: flex;
@@ -269,4 +268,41 @@ header {
   rotate: 50deg;
   left: 4em;
   top: -2em;
+}
+
+/* STAR-GRID */
+.star-item {
+  width: 5.8px;
+  height: 5.8px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgb(248, 246, 246),
+    rgba(245, 245, 248)
+  );
+  filter: blur(5px);
+}
+
+.star-item-small {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgb(248, 246, 246),
+    rgba(245, 245, 248, 0.808)
+  );
+  filter: blur(5px);
+}
+
+#stars-grid {
+  display: grid;
+  margin: 1em;
+  grid-template-columns: repeat(8, 12em);
+  grid-template-rows: repeat(8, 12em);
+  box-sizing: border-box;
+  width: fit-content;
+  align-items: center;
+  justify-items: center;
+  position: absolute;
 }
