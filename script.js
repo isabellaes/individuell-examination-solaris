@@ -7,11 +7,11 @@ async function fetchPlanetInfo(id) {
   return result[id];
 }
 
-function createTags(planet) {
+function changeElements(planet) {
   const name = document.getElementById("name");
-  name.innerHTML = planet.name;
+  name.innerHTML = planet.name.toUpperCase();
   const latinName = document.getElementById("latinName");
-  latinName.innerHTML = planet.latinName;
+  latinName.innerHTML = planet.latinName.toUpperCase();
   const desc = document.getElementById("desc");
   desc.innerHTML = planet.desc;
   const circumference = document.getElementById("circumference");
@@ -44,22 +44,27 @@ planets.forEach((div) => {
     let id = div.id;
     const planet = fetchPlanetInfo(id);
     planet.then((planet) => {
-      createTags(planet);
+      changeElements(planet);
     });
   });
 });
 
 function addStarItemtoGrid() {
   const grid = document.getElementById("stars-grid");
-  for (let index = 0; index < 32; index++) {
-    if (index % 2 === 0 && index > 10) {
+
+  for (let index = 0; index < 77; index++) {
+    if (index > 8 && index % 3 === 0) {
       const element = document.createElement("div");
       element.classList.add("star-item-small");
       grid.appendChild(element);
+    } else if ((index > 8 && index % 2 === 0) || (index > 8 && index > 75)) {
+      const element = document.createElement("div");
+      element.classList.add("star-item");
+      grid.appendChild(element);
+    } else {
+      const element = document.createElement("div");
+      grid.appendChild(element);
     }
-    const element = document.createElement("div");
-    element.classList.add("star-item");
-    grid.appendChild(element);
   }
 }
 

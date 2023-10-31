@@ -36,11 +36,9 @@ body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  padding: 0em 15em 5em 20em;
-  margin: 0;
+  margin: 2em 20em 0 20em;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
   flex-direction: column;
   flex-grow: 1;
 }
@@ -169,8 +167,7 @@ p {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.9em;
   font-weight: 300;
-  line-height: 1.2em;
-  letter-spacing: 0.16em;
+  line-height: 1.8em;
   text-align: left;
   color: #ffffff;
 }
@@ -272,37 +269,35 @@ header {
 
 /* STAR-GRID */
 .star-item {
-  width: 5.8px;
-  height: 5.8px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at center,
-    rgb(248, 246, 246),
-    rgba(245, 245, 248)
-  );
-  filter: blur(5px);
-}
-
-.star-item-small {
-  width: 4px;
-  height: 4px;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
   background: radial-gradient(
     circle at center,
     rgb(248, 246, 246),
     rgba(245, 245, 248, 0.808)
   );
-  filter: blur(5px);
+  filter: blur(3px) drop-shadow(1px 1px 2px rgb(248, 245, 245));
+}
+
+.star-item-small {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(245, 245, 248, 0.808);
+  filter: blur(3px) drop-shadow(1px 1px 2px rgb(248, 245, 245));
 }
 
 #stars-grid {
   display: grid;
-  margin: 1em;
-  grid-template-columns: repeat(8, 12em);
-  grid-template-rows: repeat(8, 12em);
+  grid-template-columns: repeat(13, auto);
   box-sizing: border-box;
-  width: fit-content;
+  width: 80%;
   align-items: center;
   justify-items: center;
   position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 15em;
 }
