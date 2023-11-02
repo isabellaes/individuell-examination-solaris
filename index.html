@@ -13,55 +13,53 @@
     />
   </head>
   <body>
-    <section id="planet-overview">
-      <a href="#overlay">
-        <div id="0" class="sun"></div>
+    <section class="planet-overview-container">
+      <a href="#planet-info-container">
+        <div id="0" class="sun-yellow"></div>
       </a>
-      <div id="planets">
+      <div class="planet-overview-content">
         <header>
           <h1>SOLSYSTEMET</h1>
           <h2>SOLARIS</h2>
         </header>
 
-        <section id="solaris-planet">
-          <a href="#overlay">
+        <section id="planets-container">
+          <a href="#planet-info-container">
             <div id="1" class="planet1"></div>
           </a>
-          <a href="#overlay">
+          <a href="#planet-info-container">
             <div id="2" class="planet2"></div>
           </a>
-          <a href="#overlay">
+          <a href="#planet-info-container">
             <div id="3" class="planet3"></div>
           </a>
-          <a href="#overlay">
+          <a href="#planet-info-container">
             <div id="4" class="planet4"></div>
           </a>
-          <a href="#overlay">
+          <a href="#planet-info-container">
             <div id="5" class="planet5"></div>
           </a>
-          <a href="#overlay">
-            <div id="6" class="planet6"><div class="satelitt"></div></div>
+          <a href="#planet-info-container">
+            <div id="6" class="planet6"><div class="ring-planet6"></div></div>
           </a>
-          <a href="#overlay">
+          <a href="#planet-info-container">
             <div id="7" class="planet7"></div>
           </a>
-          <a href="#overlay">
+          <a href="#planet-info-container">
             <div id="8" class="planet8"></div>
           </a>
         </section>
       </div>
     </section>
-    <section id="overlay">
-      <section id="planet-info">
-        <a id="close" href="#">
-          <div class="parent">
-            <div class="image1"></div>
-            <div class="image2"></div>
-            <div class="image3"></div>
-          </div>
-        </a>
+    <a id="close" href="#">
+      <section id="planet-info-container">
+        <div class="parent-blue-sun">
+          <div class="blue-sun-1"></div>
+          <div class="blue-sun-2"></div>
+          <div class="blue-sun-3"></div>
+        </div>
 
-        <div class="planetInfo-content">
+        <div class="planet-info-content">
           <div id="stars-grid"></div>
           <div class="box-100 border-bottom">
             <h1 id="name"></h1>
@@ -88,7 +86,7 @@
           </div>
         </div>
       </section>
-    </section>
+    </a>
     <script src="script.js"></script>
   </body>
 </html>

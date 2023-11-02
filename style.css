@@ -11,122 +11,6 @@ body {
   box-sizing: border-box;
 }
 
-#planet-overview {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-}
-
-#planet-info {
-  background: linear-gradient(90deg, #0c164d 0%, #190b22 100%);
-  height: 100vh;
-  width: 100vw;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-}
-
-.planetInfo-content {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 2em 20em 0 20em;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.sun {
-  position: absolute;
-  background-color: rgb(209, 249, 8);
-  width: 150vh;
-  height: 150vh;
-  border-radius: 50%;
-  margin: -25vh 0 0 -137vh;
-  overflow: hidden;
-}
-
-#planets {
-  width: 90%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 0 10%;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* Planetcontainer */
-#solaris-planet {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 6em 3em 3em 3em;
-}
-
-.planet8 {
-  background: #7a91a7;
-  border-radius: 50%;
-  width: 66px;
-  height: 66px;
-}
-
-.planet7 {
-  background: #c9d4f1;
-  border-radius: 50%;
-  width: 66px;
-  height: 66px;
-}
-.planet6 {
-  background: #c7aa72;
-  border-radius: 50%;
-  width: 144px;
-  height: 144px;
-}
-
-.planet5 {
-  background: #e29468;
-  border-radius: 50%;
-  width: 188px;
-  height: 188px;
-}
-
-.planet4 {
-  background: #ef5f5f;
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-}
-
-.planet3 {
-  background: #428ed4;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-}
-
-.planet2 {
-  background: #e7cdcd;
-  border-radius: 50%;
-  width: 26px;
-  height: 26px;
-}
-
-.planet1 {
-  background: #888888;
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-}
-
 h1 {
   font-family: "Secular One", sans-serif;
   color: #ffffff;
@@ -181,42 +65,6 @@ header {
   box-sizing: border-box;
 }
 
-.parent {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-}
-.image1 {
-  position: absolute;
-  background-color: #428dd410;
-  width: 150vh;
-  height: 150vh;
-  border-radius: 50%;
-  margin: -25vh 0 0 -125vh;
-  overflow: hidden;
-}
-.image2 {
-  position: absolute;
-  background-color: #428dd420;
-  width: 150vh;
-  height: 150vh;
-  border-radius: 50%;
-  margin: -25vh 0 0 -131vh;
-  overflow: hidden;
-}
-
-.image3 {
-  position: absolute;
-  background-color: #428ed4;
-  width: 150vh;
-  height: 150vh;
-  border-radius: 50%;
-  margin: -25vh 0 0 -137vh;
-  overflow: hidden;
-}
-
 .box-50 {
   width: 50%;
   height: fit-content;
@@ -242,20 +90,67 @@ header {
   border-bottom: #ffffff20 1px solid;
 }
 
-#overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  visibility: hidden;
+/* PLANETS - Overview */
+
+.planet-overview-container {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
 }
 
-#overlay:target {
-  visibility: visible;
+.planet-overview-content {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 10%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.satelitt {
+#planets-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 6em 3em 3em 3em;
+}
+
+.sun-yellow {
+  position: absolute;
+  background-color: #ffd029;
+  width: 150vh;
+  height: 150vh;
+  border-radius: 50%;
+  margin: -25vh 0 0 -137vh;
+  overflow: hidden;
+}
+
+.planet8 {
+  background: #7a91a7;
+  border-radius: 50%;
+  width: 66px;
+  height: 66px;
+}
+
+.planet7 {
+  background: #c9d4f1;
+  border-radius: 50%;
+  width: 66px;
+  height: 66px;
+}
+.planet6 {
+  background: #c7aa72;
+  border-radius: 50%;
+  width: 144px;
+  height: 144px;
+}
+.ring-planet6 {
   position: relative;
   background-color: #ffffff40;
   width: 10px;
@@ -265,6 +160,111 @@ header {
   rotate: 50deg;
   left: 4em;
   top: -2em;
+}
+
+.planet5 {
+  background: #e29468;
+  border-radius: 50%;
+  width: 188px;
+  height: 188px;
+}
+
+.planet4 {
+  background: #ef5f5f;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+}
+
+.planet3 {
+  background: #428ed4;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
+
+.planet2 {
+  background: #e7cdcd;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+}
+
+.planet1 {
+  background: #888888;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+}
+
+/* PLANETS - Info */
+
+#planet-info-container {
+  background: linear-gradient(90deg, #0c164d 0%, #190b22 100%);
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+#planet-info-container:target {
+  visibility: visible;
+}
+
+.planet-info-content {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 2em 20em 0 20em;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.parent-blue-sun {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+.blue-sun-1 {
+  position: absolute;
+  background-color: #428dd410;
+  width: 150vh;
+  height: 150vh;
+  border-radius: 50%;
+  margin: -25vh 0 0 -125vh;
+  overflow: hidden;
+}
+.blue-sun-2 {
+  position: absolute;
+  background-color: #428dd420;
+  width: 150vh;
+  height: 150vh;
+  border-radius: 50%;
+  margin: -25vh 0 0 -131vh;
+  overflow: hidden;
+}
+
+.blue-sun-3 {
+  position: absolute;
+  background-color: #428ed4;
+  width: 150vh;
+  height: 150vh;
+  border-radius: 50%;
+  margin: -25vh 0 0 -137vh;
+  overflow: hidden;
 }
 
 /* STAR-GRID */
@@ -300,4 +300,5 @@ header {
   right: 0;
   bottom: 0;
   left: 15em;
+  gap: 2em;
 }

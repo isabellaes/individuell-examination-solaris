@@ -1,12 +1,25 @@
-const planetinfoDiv = document.getElementById("planet-info");
-const startDiv = document.getElementById("planet-overview");
+const planets = getDivsForPlanets();
+addStarItemtoGrid();
 
+//Loopar igenom alla planet-element och skickar med dess id för att hämta information från api och skriva ut det på sidan
+planets.forEach((div) => {
+  div.addEventListener("click", () => {
+    let id = div.id;
+    const planet = fetchPlanetInfo(id);
+    planet.then((planet) => {
+      changeElements(planet);
+    });
+  });
+});
+
+//Hämtar data från api
 async function fetchPlanetInfo(id) {
   const respons = await fetch("https://majazocom.github.io/Data/solaris.json");
   const result = await respons.json();
   return result[id];
 }
 
+//Ändrar innehåll i html-taggar för planetens information
 function changeElements(planet) {
   const name = document.getElementById("name");
   name.innerHTML = planet.name.toUpperCase();
@@ -28,27 +41,17 @@ function changeElements(planet) {
   }
 }
 
+//Hämtar ut alla planet-element samt solen
 function getDivsForPlanets() {
   const div1 = document.getElementById("0");
   const planetDivs = document
-    .getElementById("solaris-planet")
+    .getElementById("planets-container")
     .getElementsByTagName("div");
   const planets = [div1, ...planetDivs];
   return planets;
 }
 
-const planets = getDivsForPlanets();
-
-planets.forEach((div) => {
-  div.addEventListener("click", () => {
-    let id = div.id;
-    const planet = fetchPlanetInfo(id);
-    planet.then((planet) => {
-      changeElements(planet);
-    });
-  });
-});
-
+//Lägger till olika grid-items i griden för att skapa en osymetrisk stjärnhimmel
 function addStarItemtoGrid() {
   const grid = document.getElementById("stars-grid");
 
@@ -63,9 +66,8 @@ function addStarItemtoGrid() {
       grid.appendChild(element);
     } else {
       const element = document.createElement("div");
+      element.style.margin = "2em";
       grid.appendChild(element);
     }
   }
 }
-
-addStarItemtoGrid();
