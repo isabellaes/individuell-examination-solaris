@@ -14,9 +14,15 @@ planets.forEach((div) => {
 
 //Hämtar data från api
 async function fetchPlanetInfo(id) {
-  const respons = await fetch("https://majazocom.github.io/Data/solaris.json");
-  const result = await respons.json();
-  return result[id];
+  try {
+    const respons = await fetch(
+      "https://majazocom.github.io/Data/solaris.json"
+    );
+    const result = await respons.json();
+    return result[id];
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 //Ändrar innehåll i html-taggar för planetens information
