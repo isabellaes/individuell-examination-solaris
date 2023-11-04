@@ -1,31 +1,41 @@
+//Loopar igenom alla planet-element och lägger till en eventlistener som triggas vid klick
 const planets = getDivsForPlanets();
-addStarItemtoGrid();
-
-//Loopar igenom alla planet-element och skickar med dess id för att hämta information från api och skriva ut det på sidan
 planets.forEach((div) => {
   div.addEventListener("click", () => {
     let id = div.id;
-    const planet = fetchPlanetInfo(id);
-    planet.then((planet) => {
-      changeElements(planet);
-    });
+    fetchPlanetInfo(id);
   });
 });
 
-//Hämtar data från api
+/* Hämtar ut alla planet-element samt solen. 
+Jag valde att sätta id på alla divar som är planeter/sol med samma index som 
+planeterna har när de hämtas från apiet. 
+Detta för att enklare komma åt informationen till rätt planet. */
+function getDivsForPlanets() {
+  const div1 = document.getElementById("0");
+  const planetDivs = document
+    .getElementById("planets-container")
+    .getElementsByTagName("div");
+  const planets = [div1, ...planetDivs];
+  return planets;
+}
+
+//Hämtar data från api och anropar funktion som skriver ut info om planeten på sidan
 async function fetchPlanetInfo(id) {
   try {
     const respons = await fetch(
       "https://majazocom.github.io/Data/solaris.json"
     );
-    const result = await respons.json();
-    return result[id];
+    const result = await respons.json().then((planet) => planet[id]);
+    changeElements(result);
   } catch (error) {
     console.log(error);
   }
 }
 
 //Ändrar innehåll i html-taggar för planetens information
+/* Har valt att skapa upp de html-taggar som behövs och sedan ändra innehållet när man klickar på en planet.
+Detta för att minska onödig kod. Alternativt hade jag kunnat skapa upp element vid klick, men sedan behöva ta bort dem. */
 function changeElements(planet) {
   const name = document.getElementById("name");
   name.innerHTML = planet.name.toUpperCase();
@@ -47,17 +57,13 @@ function changeElements(planet) {
   }
 }
 
-//Hämtar ut alla planet-element samt solen
-function getDivsForPlanets() {
-  const div1 = document.getElementById("0");
-  const planetDivs = document
-    .getElementById("planets-container")
-    .getElementsByTagName("div");
-  const planets = [div1, ...planetDivs];
-  return planets;
-}
+/*Lägger till olika grid-items i griden för att skapa en stjärnhimmel.
+Valde att lägga detta i en funktion för att delvis undvika att ha många divar i index filen, 
+och för att lättare kunna rita ut den slumpmässigt. Det gör också att koden blir mer ren och läsbar.
 
-//Lägger till olika grid-items i griden för att skapa en osymetrisk stjärnhimmel
+För slumpmässigt utförande har jag använt mig av lite olika uträkningar samt blandat styleade divar med tomma.
+*/
+
 function addStarItemtoGrid() {
   const grid = document.getElementById("stars-grid");
 
@@ -77,3 +83,5 @@ function addStarItemtoGrid() {
     }
   }
 }
+
+addStarItemtoGrid();

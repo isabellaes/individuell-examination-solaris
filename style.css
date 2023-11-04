@@ -228,7 +228,7 @@ header {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1;
 }
 
 .parent-blue-sun {
